@@ -1,0 +1,615 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day",
+        "Good morning!",
+        "Good eveing",
+        "hey there!",
+        "good after noon"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Good bye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+
+    {
+      "tag": "payments",
+      "patterns": [
+        "Do you take credit cards?",
+        "Do you accept Mastercard?",
+        "Can I pay with Paypal?",
+        "Are you cash only?"
+      ],
+      "responses": [
+        "We accept VISA, Mastercard , Paypal & You can pay with cash also.",
+        "We accept most major credit cards, Paypal, Cash"
+      ]
+    },
+
+    {
+      "tag": "BotName",
+      "patterns": [
+        "Who are you!",
+        "Your name?",
+        "what is your name?",
+        "Who are you",
+        "you?",
+        "name"
+      ],
+      "responses": [
+        "My Name is Medica..! i am here to assist you!",
+        " I am Medica..."
+      ]
+    },
+
+    {
+      "tag": "services",
+      "patterns": [
+        "what do you are provide?",
+        "what about your servise?",
+        "what do you sell?",
+        "What Type of services you provide?",
+        "Type of Services?",
+        "Which items do you have?",
+        "What kinds of items are there?",
+        "What do you sell?",
+        "Services list",
+        "service list",
+        "Service",
+        "service",
+        "provide",
+        "your services"
+      ],
+      "responses": ["Sql connection services..."]
+    },
+
+    {
+      "tag": "Locations",
+      "patterns": [
+        "Where are you?",
+        "Where can i get your services?",
+        "Your location?",
+        "Tell me your locations?",
+        "Tell me your places?",
+        "your adress?",
+        "service address?",
+        "your location",
+        "Your Location",
+        "Location?"
+      ],
+      "responses": ["SQl connection about locations?"]
+    },
+
+    {
+      "tag": "Booking",
+      "patterns": [
+        "May i need to book for appointment?",
+        "May i need to recerve time for checking?",
+        "May i need to book?",
+        "Is there are booking?",
+        "How to recerve?",
+        "May i need to reserve befor come?"
+      ],
+      "responses": [
+        "Yes ofcouse, You need to reserve a date and time for your checking",
+        "Yes you need to book.",
+        "Yaa you need to reserve a time slot for you.",
+        "Yes your need to login to our website and reserve a date & time or You can reserve with contact us."
+      ]
+    },
+    {
+      "tag": "fever",
+      "patterns": [
+          "What is considered a normal body temperature?",
+          "What are the common causes of fever?",
+          "What can I do to manage a fever at home?",
+          "fever problem?",
+          "fever?",
+          "how to manage fever",
+          "how to fever manage",
+          "what is feever?",
+          "causes of feaver?",
+          "fevr management tips",
+          "fevr remedies"
+      ],
+      "responses": [
+          "A normal body temperature is typically around 98.6°F (37°C). However, slight variations can be normal, and an individual's baseline temperature may differ slightly.",
+          "Common causes of fever include infections, such as colds or flu, and inflammatory conditions.",
+          "To manage a fever at home, you can take over-the-counter fever-reducing medications like acetaminophen or ibuprofen. It's also important to rest, stay hydrated, and dress lightly to help cool the body."
+      ]
+  },
+  {
+      "tag": "legpain",
+      "patterns": [
+          "What are common causes of leg pain?",
+          "How can I prevent leg pain during exercise?",
+          "When should I seek medical attention for leg pain?",
+          "leg problem?",
+          "legpain",
+          "LegPain",
+          "how to legpain manage",
+          "lag pain causes?",
+          "prevent lag pain during exercise?",
+          "when to see doctor for leg pain?"
+      ],
+      "responses": [
+          "Leg pain can have various causes, including muscle strains, overuse, injuries, nerve issues, vascular problems, and arthritis.",
+          "To prevent leg pain during exercise, warm up properly, wear appropriate footwear, maintain good form, gradually increase exercise intensity, and avoid overexertion.",
+          "Seek medical attention for leg pain if it is severe, persistent, or accompanied by symptoms like swelling, redness, or difficulty walking."
+      ]
+  },
+  {
+      "tag": "stomach",
+      "patterns": [
+          "What are common causes of stomach pain?",
+          "How can I relieve indigestion or an upset stomach?",
+          "What are the symptoms of gastroenteritis?",
+          "How can I prevent stomach infections like food poisoning?",
+          "What are the common symptoms of ulcers?",
+          "When should I seek medical attention for stomach pain?",
+          "stomach",
+          "stomache pain causes?",
+          "indigestion relief tips?",
+          "symptoms of gastorenteritis?",
+          "how to prevent food posioning?",
+          "ulcer symptoms",
+          "stomack pain remedy"
+      ],
+      "responses": [
+          "Common causes of stomach pain include indigestion, gas, gastritis, gastroenteritis, constipation, menstrual cramps, food poisoning, and gastrointestinal disorders.",
+          "To relieve indigestion or an upset stomach, try drinking peppermint tea, chewing ginger, avoiding spicy or fatty foods, eating smaller meals, and using over-the-counter antacids.",
+          "Gastroenteritis typically presents with symptoms such as diarrhea, nausea, vomiting, abdominal cramps, and sometimes fever."
+      ]
+  },
+  {
+      "tag": "headache",
+      "patterns": [
+          "What is a headache?",
+          "What are the different types of headaches?",
+          "What are some common triggers for headaches?",
+          "When should I seek medical attention for a headache?",
+          "Can headaches be prevented?",
+          "headache problem",
+          "headache solution",
+          "hedache types?",
+          "triggers for hedaches?",
+          "seek medical attention for hedache?",
+          "hedaches prevention tips"
+      ],
+      "responses": [
+          "A headache is pain or discomfort in the head or neck region, varying in intensity and duration.",
+          "There are various types of headaches, including tension headaches, migraines, cluster headaches, and sinus headaches.",
+          "Common triggers for headaches include stress, lack of sleep, dehydration, certain foods, caffeine, alcohol, hormonal changes, and environmental factors."
+      ]
+  },
+  {
+      "tag": "allergies",
+      "patterns": [
+          "What are common symptoms of allergies?",
+          "How can I manage allergy symptoms?",
+          "What are common allergens?",
+          "Can allergies be cured?",
+          "allergy problem",
+          "allergy solution",
+          "allergies symptomes?",
+          "manage alergies?",
+          "common alergenes?",
+          "cure for allergies?"
+      ],
+      "responses": [
+          "Common symptoms of allergies include sneezing, itching, runny or stuffy nose, watery eyes, and skin rashes.",
+          "To manage allergy symptoms, avoid known allergens, use over-the-counter antihistamines, and keep your living environment clean.",
+          "Common allergens include pollen, dust mites, pet dander, certain foods, and insect stings."
+      ]
+  },
+  {
+      "tag": "diabetes",
+      "patterns": [
+          "What is diabetes?",
+          "What are the symptoms of diabetes?",
+          "How is diabetes managed?",
+          "What are the complications of diabetes?",
+          "diabetes problem",
+          "diabetes solution",
+          "what is diabetees?",
+          "symptoms of diabties?",
+          "manage diabties?",
+          "complications of diabties?"
+      ],
+      "responses": [
+          "Diabetes is a chronic condition that affects how your body processes blood sugar (glucose).",
+          "Symptoms of diabetes include increased thirst, frequent urination, extreme fatigue, blurred vision, and slow-healing sores.",
+          "Diabetes management involves monitoring blood sugar levels, following a healthy diet, exercising regularly, and taking prescribed medications."
+      ]
+  },
+  {
+      "tag": "hypertension",
+      "patterns": [
+          "What is hypertension?",
+          "What are the symptoms of hypertension?",
+          "How can hypertension be managed?",
+          "What are the complications of hypertension?",
+          "hypertension problem",
+          "hypertension solution",
+          "what is hypertention?",
+          "symptoms of hypertention?",
+          "manage hypertention?",
+          "complications of hypertention?"
+      ],
+      "responses": [
+          "Hypertension, or high blood pressure, is a condition where the force of the blood against the artery walls is too high.",
+          "Symptoms of hypertension can include headaches, shortness of breath, and nosebleeds, but it often has no noticeable symptoms.",
+          "Managing hypertension involves lifestyle changes such as eating a balanced diet, exercising, reducing salt intake, and taking prescribed medications."
+      ]
+  },
+  {
+      "tag": "mentalhealth",
+      "patterns": [
+          "What is mental health?",
+          "What are common mental health issues?",
+          "How can I improve my mental health?",
+          "When should I seek help for mental health?",
+          "mental health problem",
+          "mental health solution",
+          "mental helth issues?",
+          "improve mental helth?",
+          "seek help for mental helth?"
+      ],
+      "responses": [
+          "Mental health refers to cognitive, behavioral, and emotional well-being.",
+          "Common mental health issues include depression, anxiety, stress, and bipolar disorder.",
+          "To improve mental health, practice self-care, stay connected with loved ones, exercise regularly, get enough sleep, and seek professional help when needed."
+      ]
+  },
+  {
+      "tag": "nutrition",
+      "patterns": [
+          "What is a balanced diet?",
+          "What are essential nutrients?",
+          "How can I improve my diet?",
+          "What are healthy eating habits?",
+          "nutrition problem",
+          "nutrition solution",
+          "balanced diet?",
+          "essental nutriants?",
+          "improve diet?",
+          "healthy eating tips"
+      ],
+      "responses": [
+          "A balanced diet includes a variety of foods in the right proportions, providing all necessary nutrients.",
+          "Essential nutrients include carbohydrates, proteins, fats, vitamins, and minerals.",
+          "To improve your diet, eat more fruits and vegetables, choose whole grains, reduce sugar and salt intake, and stay hydrated."
+      ]
+  },
+  {
+      "tag": "exercise",
+      "patterns": [
+          "What are the benefits of exercise?",
+          "How much exercise do I need?",
+          "What are good exercises for beginners?",
+          "How can I stay motivated to exercise?",
+          "exercise problem",
+          "exercise solution",
+          "benefits of excersise?",
+          "how much excersise?",
+          "beginners excersise?",
+          "motivation to excersise?"
+      ],
+      "responses": [
+          "Exercise has many benefits, including improving cardiovascular health, strengthening muscles, and enhancing mental well-being.",
+          "Adults should aim for at least 150 minutes of moderate-intensity exercise or 75 minutes of vigorous-intensity exercise per week.",
+          "Good exercises for beginners include walking, jogging, cycling, and bodyweight exercises like squats and push-ups."
+      ]
+  },
+  {
+      "tag": "contactus",
+      "patterns": [
+          "How to contact you?",
+          "Your phone number?",
+          "Your email address?",
+          "Your contact details?",
+          "Can I call you?",
+          "Can I email you?",
+          "Your phone number?",
+          "Your email?",
+          "contact detals?",
+          "phone numbr?"
+      ],
+      "responses": ["Please contact us at our support email: support@example.com or call us at (123) 456-7890."]
+  },
+  {
+      "tag": "aboutus",
+      "patterns": [
+          "What is your company?",
+          "Tell about your company?",
+          "Tell about you?",
+          "Tell your company details?",
+          "Your details?",
+          "Your history?",
+          "about your company?",
+          "company detals?",
+          "your history?",
+          "about you?"
+      ],
+      "responses": ["We are a healthcare company dedicated to providing reliable health information and support. Our mission is to improve health outcomes through accessible and accurate health guidance."]
+  },
+  {
+      "tag": "workingtime",
+      "patterns": [
+          "Your service time?",
+          "What time does your service start?",
+          "Service time?",
+          "Working time?",
+          "How long do you provide service in a day?",
+          "Shop opening time?",
+          "When are you free?",
+          "service hours?",
+          "working hours?",
+          "openning hours?"
+      ],
+      "responses": ["Our service is available 24/7. You can reach out to us anytime for assistance."]
+  },
+  {
+      "tag": "ourpromises",
+      "patterns": [
+          "Your service promises?",
+          "Company promises?",
+          "Vision?",
+          "Your company goals?",
+          "Your aims?",
+          "Your motto?",
+          "Your motivation?",
+          "service promises?",
+          "company vision?",
+          "your goals?",
+          "company aim?"
+      ],
+      "responses": ["Our promises include providing accurate health information, ensuring patient confidentiality, and delivering compassionate care. Our vision is to be the most trusted source of health guidance."]
+    },
+    {
+      "tag": "cold_and_flu",
+      "patterns": [
+          "What are the symptoms of a cold?",
+          "How can I treat the flu at home?",
+          "What are the differences between a cold and the flu?",
+          "cold symptoms",
+          "flu symptoms",
+          "cold vs flu",
+          "symtoms of a cold?",
+          "treat flu at home?",
+          "differences between cold and flu?",
+          "cold symptms",
+          "flu symptms",
+          "cold versus flu"
+      ],
+      "responses": [
+          "Common cold symptoms include a runny or stuffy nose, sore throat, cough, congestion, and slight body aches or a mild headache. Flu symptoms are more severe and include high fever, severe body aches, fatigue, and sometimes vomiting and diarrhea.",
+          "To treat the flu at home, get plenty of rest, stay hydrated, take over-the-counter pain relievers and fever reducers, and consider antiviral medications if prescribed by a doctor.",
+          "The flu generally causes more severe symptoms than the common cold and can lead to serious complications. Cold symptoms are usually milder and more likely to result in a runny or stuffy nose."
+      ]
+  },
+  {
+      "tag": "skin_care",
+      "patterns": [
+          "What are the best practices for skin care?",
+          "How can I treat acne?",
+          "What causes dry skin?",
+          "skin care tips",
+          "acne treatment",
+          "dry skin remedies",
+          "best skin care practices?",
+          "treating acne?",
+          "causes of dry skin?",
+          "skincare tips",
+          "acne treatments",
+          "remedies for dry skin"
+      ],
+      "responses": [
+          "Good skin care practices include cleansing your skin daily, using moisturizer, wearing sunscreen, avoiding harsh chemicals, and staying hydrated.",
+          "To treat acne, use over-the-counter products containing benzoyl peroxide or salicylic acid, keep your skin clean, avoid picking at pimples, and consult a dermatologist if necessary.",
+          "Dry skin can be caused by environmental factors, hot showers, harsh soaps, and medical conditions. To treat dry skin, use a gentle cleanser, apply a moisturizer immediately after bathing, and consider using a humidifier in your home."
+      ]
+  },
+  {
+      "tag": "sleep_disorders",
+      "patterns": [
+          "What are common sleep disorders?",
+          "How can I improve my sleep quality?",
+          "What causes insomnia?",
+          "sleep problems",
+          "insomnia treatment",
+          "improving sleep",
+          "common sleep disorders?",
+          "improve sleep quality?",
+          "causes of insomnia?",
+          "sleep disorders",
+          "treatment for insomnia",
+          "how to improve sleep"
+      ],
+      "responses": [
+          "Common sleep disorders include insomnia, sleep apnea, restless legs syndrome, and narcolepsy.",
+          "To improve sleep quality, maintain a regular sleep schedule, create a relaxing bedtime routine, keep your sleep environment cool and dark, and avoid caffeine and electronics before bed.",
+          "Insomnia can be caused by stress, anxiety, depression, poor sleep habits, and certain medical conditions or medications. Treatment may involve lifestyle changes, cognitive behavioral therapy, and sometimes medications."
+      ]
+  },
+  {
+      "tag": "nutrition_and_diet",
+      "patterns": [
+          "What are the benefits of a balanced diet?",
+          "How can I lose weight healthily?",
+          "What should I eat to gain muscle?",
+          "healthy eating",
+          "weight loss tips",
+          "muscle gain diet",
+          "benefits of balanced diet?",
+          "lose weight healthily?",
+          "diet for muscle gain?",
+          "healthy eating tips",
+          "weight loss advice",
+          "diet to gain muscle"
+      ],
+      "responses": [
+          "A balanced diet provides the nutrients your body needs to function correctly, including vitamins, minerals, protein, carbohydrates, and healthy fats.",
+          "To lose weight healthily, focus on a balanced diet with plenty of fruits, vegetables, lean proteins, and whole grains, combined with regular physical activity.",
+          "To gain muscle, eat a diet rich in protein, healthy fats, and complex carbohydrates, and engage in regular strength training exercises."
+      ]
+  },
+  {
+      "tag": "heart_health",
+      "patterns": [
+          "What are the symptoms of a heart attack?",
+          "How can I improve my heart health?",
+          "What are risk factors for heart disease?",
+          "heart attack signs",
+          "heart health tips",
+          "heart disease prevention",
+          "symptoms of heart attack?",
+          "improve heart health?",
+          "risk factors for heart disease?",
+          "heart attack symptoms",
+          "tips for heart health",
+          "prevention of heart disease"
+      ],
+      "responses": [
+          "Symptoms of a heart attack can include chest pain or discomfort, shortness of breath, nausea, lightheadedness, and pain or discomfort in the arms, back, neck, jaw, or stomach.",
+          "To improve heart health, eat a balanced diet low in saturated fats and high in fruits and vegetables, exercise regularly, maintain a healthy weight, avoid smoking, and manage stress.",
+          "Risk factors for heart disease include high blood pressure, high cholesterol, smoking, obesity, physical inactivity, and a family history of heart disease."
+      ]
+  },
+  {
+      "tag": "womens_health",
+      "patterns": [
+          "What are common women's health issues?",
+          "How can I manage menstrual cramps?",
+          "What are the symptoms of menopause?",
+          "women's health problems",
+          "menstrual pain relief",
+          "menopause symptoms",
+          "common womens health issues?",
+          "manage menstrual cramps?",
+          "symptoms of menopause?",
+          "womens health issues",
+          "relief for menstrual pain",
+          "symptoms of menopause"
+      ],
+      "responses": [
+          "Common women's health issues include menstrual irregularities, pregnancy-related conditions, menopause, and conditions such as polycystic ovary syndrome (PCOS) and endometriosis.",
+          "To manage menstrual cramps, try using a heating pad on your lower abdomen, taking over-the-counter pain relievers, exercising, and practicing relaxation techniques.",
+          "Symptoms of menopause can include hot flashes, night sweats, mood changes, sleep problems, and vaginal dryness. Treatments may include lifestyle changes, hormone therapy, and other medications."
+      ]
+  },
+  {
+      "tag": "mens_health",
+      "patterns": [
+          "What are common men's health issues?",
+          "How can I improve prostate health?",
+          "What are symptoms of low testosterone?",
+          "men's health problems",
+          "prostate health tips",
+          "low testosterone symptoms",
+          "common mens health issues?",
+          "improve prostate health?",
+          "symptoms of low testosterone?",
+          "mens health issues",
+          "tips for prostate health",
+          "symptoms of low testosterone"
+      ],
+      "responses": [
+          "Common men's health issues include prostate problems, erectile dysfunction, low testosterone, and cardiovascular diseases.",
+          "To improve prostate health, eat a diet rich in fruits and vegetables, maintain a healthy weight, exercise regularly, and have regular check-ups with your doctor.",
+          "Symptoms of low testosterone can include fatigue, decreased libido, erectile dysfunction, mood changes, and loss of muscle mass. Consult a healthcare provider for proper diagnosis and treatment options."
+      ]
+  },
+  {
+      "tag": "child_health",
+      "patterns": [
+          "What are common childhood illnesses?",
+          "How can I boost my child's immune system?",
+          "What are the vaccination schedules for children?",
+          "child health problems",
+          "boosting child's immunity",
+          "vaccination schedule",
+          "common childhood illnesses?",
+          "boost child's immune system?",
+          "vaccination schedule for children?",
+          "childhood illnesses",
+          "boost child immunity",
+          "child vaccination schedule"
+      ],
+      "responses": [
+          "Common childhood illnesses include colds, flu, ear infections, and gastrointestinal infections.",
+          "To boost your child's immune system, ensure they have a balanced diet, regular physical activity, adequate sleep, and good hygiene practices. Also, keep up with recommended vaccinations.",
+          "Vaccination schedules for children typically include vaccines for diseases like measles, mumps, rubella, polio, and whooping cough. Consult your pediatrician for the full schedule."
+      ]
+  },
+  {
+      "tag": "mental_wellness",
+      "patterns": [
+          "How can I manage stress?",
+          "What are the benefits of meditation?",
+          "How can I improve my mental well-being?",
+          "stress management tips",
+          "benefits of meditation",
+          "mental well-being improvement",
+          "manage stress?",
+          "benefits of medtation?",
+          "improve mental well-being?",
+          "tips for stress management",
+          "meditation benefits",
+          "improving mental well-being"
+      ],
+      "responses": [
+          "To manage stress, practice relaxation techniques such as deep breathing, meditation, or yoga, maintain a healthy lifestyle, and seek support from friends, family, or a mental health professional.",
+          "The benefits of meditation include reduced stress, improved concentration, increased self-awareness, and enhanced emotional health.",
+          "To improve your mental well-being, stay connected with loved ones, engage in regular physical activity, pursue hobbies, get enough sleep, and seek professional help if needed."
+      ]
+  },
+  {
+      "tag": "first_aid",
+      "patterns": [
+          "How to perform CPR?",
+          "What should I do for a burn?",
+          "How do I treat a cut?",
+          "CPR instructions",
+          "first aid for burns",
+          "cut treatment",
+          "performing CPR?",
+          "treating a burn?",
+          "treatment for a cut?",
+          "how to do CPR",
+          "first aid burns",
+          "cut treatments"
+      ],
+      "responses": [
+          "To perform CPR, place the heel of your hand on the center of the chest, place your other hand on top, and press hard and fast at a rate of 100-120 compressions per minute. If trained, provide rescue breaths after every 30 compressions.",
+          "For a burn, cool the burn under running water for at least 10 minutes, cover with a sterile dressing, and avoid using ice or applying creams. Seek medical attention if necessary.",
+          "To treat a cut, clean the wound with water, apply an antiseptic, cover with a sterile bandage, and apply pressure if the bleeding is severe. Seek medical attention if the cut is deep or won't stop bleeding."
+      ]
+    }
+  ]  
+}
+      
