@@ -8,6 +8,7 @@
         "How are you",
         "Is anyone there?",
         "Hello",
+        "Hello!",
         "Good day",
         "Good morning!",
         "Good eveing",
@@ -61,8 +62,9 @@
         "name"
       ],
       "responses": [
-        "My Name is Medica..! i am here to assist you!",
-        " I am Medica..."
+        "My Name is OneMedical..! i am here to assist you!",
+        " I am OneMedical...",
+        "OneMedical"
       ]
     },
 
@@ -105,22 +107,27 @@
     },
 
     {
-      "tag": "Booking",
+      "tag": "appointment",
       "patterns": [
-        "May i need to book for appointment?",
+        "I want to make an appointment",
         "May i need to recerve time for checking?",
         "May i need to book?",
         "Is there are booking?",
         "How to recerve?",
+        "Schedule a meeting", 
+        "Book an appointment",
+        "Make an appoinment",
         "May i need to reserve befor come?"
       ],
       "responses": [
-        "Yes ofcouse, You need to reserve a date and time for your checking",
-        "Yes you need to book.",
-        "Yaa you need to reserve a time slot for you.",
-        "Yes your need to login to our website and reserve a date & time or You can reserve with contact us."
-      ]
+        "Sure! Please provide the date, time, email, and contact number for the appointment."
+]
     },
+    {
+        "tag": "confirmation_code",
+        "patterns": ["What's my confirmation code?", "Confirmation code"],
+        "responses": ["Your confirmation code is {{code}}."]
+    },  
     {
       "tag": "fever",
       "patterns": [

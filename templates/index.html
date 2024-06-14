@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
   <div class="container">
     <nav>
-      <!-- <div class="nav__logo">MEDIBuddy</div> -->
       <div>
         <img class="Logo_Imga" src="/static/assets/images/One-bg.png" alt="logo image" />
       </div>
@@ -68,36 +68,82 @@
 
   <!-- Chatbot Interface -->
   <section class="msger" id="chatbot">
-    <header class="msger-header">
-      <div class="msger-header-title">
-        <i class="ri-bug-line"></i> Chatbot <i class="ri-bug-line"></i>
-      </div>
-    </header>
-    <main class="msger-chat">
-      <div class="msg left-msg">
-        <div class="msg-img" style="background-image: url(https://image.flaticon.com/icons/svg/327/327779.svg)"></div>
-        <div class="msg-bubble">
-          <div class="msg-info">
-            <div class="msg-info-name">Chatbot</div>
-            <div class="msg-info-time">12:45</div>
+    <div class="msger-container">
+      <header class="msger-header">
+        <div class="msger-header-title">
+          <div class="msger-text">
+            <h3>OneMedical</h3>
+            <p>Chat with us</p>
           </div>
-          <div class="msg-text">
-            Hi, welcome to ChatBot! Go ahead and send me a message. 😄
+          <button class="closeButton" onclick="toggleChatbot()">✖</button>
+        </div>
+      </header>
+      <main class="msger-chat">
+        <div class="msg left-msg">
+          <div class="msg-img" style="background-image: url(https://image.flaticon.com/icons/svg/327/327779.svg)"></div>
+          <div class="msg-bubble">
+            <div class="msg-info">
+              <div class="msg-info-name">Chatbot</div>
+              <div class="msg-info-time">12:45</div>
+            </div>
+            <div class="msg-text">
+              Hi, welcome to ChatBot! Go ahead and send me a message. 😄
+            </div>
           </div>
         </div>
-      </div>
-    </main>
-    <form class="msger-inputarea">
-      <input type="text" class="msger-input" id="textInput" placeholder="Enter your message...">
-      <button type="submit" class="msger-send-btn">Send</button>
-    </form>
+      </main>
+      <form class="msger-inputarea">
+        <input type="text" class="msger-input" id="textInput" placeholder="Enter your message...">
+        <button type="submit" class="msger-send-btn">Send</button>
+        <button type="button" class="msger-voiceBtn" id="voiceBtn"><i class="fa fa-microphone"
+            aria-hidden="true"></i></button>
+      </form>
+    </div>
   </section>
+  <div id="appointmentForm" style="display: none;">
+    <input type="text" id="appointmentDate" placeholder="Date">
+    <input type="text" id="appointmentTime" placeholder="Time">
+    <input type="email" id="appointmentEmail" placeholder="Email">
+    <input type="text" id="appointmentContact" placeholder="Contact Number">
+    <button onclick="submitAppointment()">OK</button>
+  </div>
 
   <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
   <script>
+    function submitAppointment() {
+        const date = document.getElementById('appointmentDate').value;
+        const time = document.getElementById('appointmentTime').value;
+        const email = document.getElementById('appointmentEmail').value;
+        const contact = document.getElementById('appointmentContact').value;
+
+        // Send appointment details to backend
+        fetch('/make_appointment', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ date, time, email, contact })
+        })
+        .then(response => {
+          if (response.ok) {
+            return response.text();
+          }
+          throw new Error('Failed to make appointment');
+        })
+        .then(data => {
+          alert('Appointment made successfully. Check your email for confirmation code.');
+          // Hide appointment form after submission
+          document.getElementById('appointmentForm').style.display = 'none';
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('Failed to make appointment. Please try again.');
+        });
+      }
+      
     function toggleChatbot() {
       const chatbot = document.getElementById('chatbot');
-      chatbot.style.display = chatbot.style.display === 'none' ? 'block' : 'none';
+      chatbot.style.display = chatbot.style.display === 'none' || chatbot.style.display === '' ? 'block' : 'none';
     }
 
     const msgerForm = document.querySelector(".msger-inputarea");
@@ -105,7 +151,7 @@
     const msgerChat = document.querySelector(".msger-chat");
 
     const BOT_IMG = "https://image.flaticon.com/icons/svg/327/327779.svg";
-    const PERSON_IMG = "https://image.flaticon.com/icons/svg/145/145867.svg";
+    const PERSON_IMG = "https://www.svgrepo.com/show/492886/business-person-with-a-resolved-expression.svg";
     const BOT_NAME = "    ChatBot";
     const PERSON_NAME = "You";
 
@@ -130,25 +176,64 @@
                             <div class="msg-info-time">${formatDate(new Date())}</div>
                         </div>
                         <div class="msg-text">${text}</div>
+                        ${side === 'left' ? '<button class="speak-btn" onclick="speakText(this)"><i class="fa fa-volume-up"></i></button>' : ''}
                     </div>
                 </div>
             `;
+      const msgerChat = document.querySelector(".msger-chat");
       msgerChat.insertAdjacentHTML("beforeend", msgHTML);
-      msgerChat.scrollTop += 500;
+      msgerChat.scrollTop = msgerChat.scrollHeight;
     }
 
     function botResponse(rawText) {
       $.get("/get", { msg: rawText }).done(function (data) {
+        console.log(rawText);
+        console.log(data);
         const msgText = data;
         appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
       });
     }
+
 
     function formatDate(date) {
       const h = "0" + date.getHours();
       const m = "0" + date.getMinutes();
       return `${h.slice(-2)}:${m.slice(-2)}`;
     }
+
+    // Text-to-Speech
+    function speakText(btn) {
+      const text = btn.parentElement.querySelector(".msg-text").innerText;
+      const speech = new SpeechSynthesisUtterance(text);
+      speech.lang = 'en-US'; // You can change the language if needed
+      window.speechSynthesis.speak(speech);
+    }
+
+
+    // Speech to Text
+    const voiceBtn = document.getElementById('voiceBtn');
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+
+    recognition.onstart = function () {
+      console.log('Voice recognition activated. Try speaking into the microphone.');
+    };
+
+    recognition.onspeechend = function () {
+      console.log('You were quiet for a while so voice recognition turned itself off.');
+      recognition.stop();
+    };
+
+    recognition.onresult = function (event) {
+      const transcript = event.results[0][0].transcript;
+      console.log('Transcript:', transcript);
+      appendMessage(PERSON_NAME, PERSON_IMG, "right", transcript);
+      botResponse(transcript);
+    };
+
+    voiceBtn.addEventListener('click', () => {
+      recognition.start();
+    });
   </script>
 </body>
 

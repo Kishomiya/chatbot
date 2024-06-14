@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue May 28 12:06:44 2024
-
-@author: HP
-"""
-
 import nltk
 nltk.download('popular')
 from nltk.stem import WordNetLemmatizer
@@ -53,6 +46,9 @@ def bow(sentence, words, show_details=True):
     return(np.array(bag))
 
 def predict_class(sentence, model):
+    # handle empty input
+    if sentence.strip() == "":
+        return []
     # filter out predictions below a threshold
     p = bow(sentence, words,show_details=False)
     res = model.predict(np.array([p]))[0]
@@ -66,20 +62,30 @@ def predict_class(sentence, model):
     return return_list
 
 def getResponse(ints, intents_json):
+    if len(ints) == 0:
+        return "This is a healthcare related chatbot, ask anything related to the Healthcare"
     tag = ints[0]['intent']
     list_of_intents = intents_json['intents']
     for i in list_of_intents:
-        if(i['tag']== tag):
+        if i['tag'] == tag:
             result = random.choice(i['responses'])
             break
     return result
 
 def chatbot_response(msg):
     ints = predict_class(msg, model)
+    if len(ints) == 0 or not is_pattern_in_intents(msg, intents):
+        return "This is a healthcare related chatbot, ask anything related to the Healthcare"
     res = getResponse(ints, intents)
     print(res)
-    
     return res
+
+def is_pattern_in_intents(msg, intents_json):
+    for intent in intents_json['intents']:
+        for pattern in intent['patterns']:
+            if msg.lower() in pattern.lower():
+                return True
+    return False
 
 
 from flask import Flask, render_template, request
@@ -98,4 +104,4 @@ def get_bot_response():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

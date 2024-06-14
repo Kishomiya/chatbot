@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue May 28 12:06:44 2024
-
-@author: HP
-"""
-
 import nltk;
 from nltk.stem import WordNetLemmatizer;
 lemmatizer = WordNetLemmatizer();
